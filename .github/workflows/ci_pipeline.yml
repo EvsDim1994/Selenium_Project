@@ -35,7 +35,7 @@ jobs:
           mvn allure:report
 
       - name: Publish Allure report
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3  # Обновленная версия
         with:
-          name: allure-report  # Имя артефакта
-          path: target/site/allure-maven-plugin  # Путь к артефакту для загрузки
+          name: allure-report
+          path: target/site/allure-maven-plugin
