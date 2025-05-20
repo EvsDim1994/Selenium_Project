@@ -34,8 +34,12 @@ jobs:
         run: |
           mvn allure:report
 
+      - name: Check generated report
+        run: |
+          ls -l target/site/allure-maven-plugin  # Проверка содержимого директории
+
       - name: Publish Allure report
-        uses: actions/upload-artifact@v3  # Обновленная версия
+        uses: actions/upload-artifact@v3
         with:
           name: allure-report
           path: target/site/allure-maven-plugin
