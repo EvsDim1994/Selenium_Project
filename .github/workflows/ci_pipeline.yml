@@ -39,16 +39,3 @@ jobs:
         with:
           name: allure-report  # Имя артефакта
           path: target/site/allure-maven-plugin  # Путь к артефакту для загрузки
-
-  download:
-    runs-on: ubuntu-latest
-    needs: test  # Зависимость от job test
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Download Allure report
-        uses: actions/download-artifact@v2
-        with:
-          name: allure-report  # Имя артефакта, который вы хотите скачать
-          path: ./allure-reports  # Путь, куда будет загружен артефакт
