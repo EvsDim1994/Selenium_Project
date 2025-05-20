@@ -37,8 +37,8 @@ jobs:
       - name: Publish Allure report
         uses: actions/upload-artifact@v2
         with:
-          name: allure-report
-          path: target/site/allure-maven-plugin
+          name: allure-report  # Имя артефакта
+          path: target/site/allure-maven-plugin  # Путь к артефакту для загрузки
 
   download:
     runs-on: ubuntu-latest
@@ -50,5 +50,5 @@ jobs:
       - name: Download Allure report
         uses: actions/download-artifact@v2
         with:
-          name: allure-report
+          name: allure-report  # Имя артефакта, который вы хотите скачать
           path: ./allure-reports  # Путь, куда будет загружен артефакт
