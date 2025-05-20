@@ -16,6 +16,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '11'  # Укажите нужную версию JDK
+          distribution: 'adopt'  # Укажите дистрибутив JDK (например, 'adopt', 'zulu', 'temurin')
 
       - name: Install Maven
         run: |
