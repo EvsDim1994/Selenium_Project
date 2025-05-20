@@ -33,8 +33,12 @@ public class DriverRule extends ExternalResource {
     }
 
     public void startUpChrome(){
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless"); // Запуск в headless режиме
+        options.addArguments("--no-sandbox"); // Рекомендуется для Linux
+        options.addArguments("--disable-dev-shm-usage"); // Рекомендуется для Linux
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(options);
     }
 
     public void startUpYandex() {
