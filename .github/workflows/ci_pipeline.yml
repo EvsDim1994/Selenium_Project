@@ -1,0 +1,26 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - main  # Запуск при пуше в ветку main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'  # Укажите нужную версию JDK
+
+      - name: Install Maven
+        run: |
+          sudo apt-get install maven
+
+      - name: Run tests
+        run: |
+          mvn clean test -Dbrowser=chrome
