@@ -25,3 +25,17 @@ jobs:
       - name: Run tests
         run: |
           mvn clean test -Dbrowser=chrome
+
+      - name: Install Allure
+        run: |
+          sudo apt-get install allure
+
+      - name: Generate Allure report
+        run: |
+          mvn allure:report
+
+      - name: Publish Allure report
+        uses: actions/upload-artifact@v2
+        with:
+          name: allure-report
+          path: target/site/allure-maven-plugin
