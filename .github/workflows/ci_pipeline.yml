@@ -39,3 +39,11 @@ jobs:
         with:
           name: allure-report
           path: target/site/allure-maven-plugin
+
+  download:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Allure report
+        uses: actions/download-artifact@v2
+        with:
+          name: allure-report
