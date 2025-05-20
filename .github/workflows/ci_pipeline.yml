@@ -39,7 +39,7 @@ jobs:
           ls -l target/site/allure-maven-plugin  # Проверка содержимого директории
 
       - name: Publish Allure report
-        uses: actions/upload-artifact@v2  # Попробуйте использовать v2
+        uses: actions/upload-artifact@v3  # Версия v3
         with:
           name: allure-report
           path: target/site/allure-maven-plugin
